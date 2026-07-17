@@ -1,5 +1,5 @@
 # Alpha Manufacturing Group (AMG): ERP Transformation Case
-
+# initial commit
 ## 1. Company Context
 You are advising **Alpha Manufacturing Group (AMG)**, a mid-sized North American industrial equipment manufacturer.
 
