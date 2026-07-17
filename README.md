@@ -1,82 +1,41 @@
-# Alpha Manufacturing Group (AMG): ERP Transformation Case
-# initial commit
-## 1. Company Context
-You are advising **Alpha Manufacturing Group (AMG)**, a mid-sized North American industrial equipment manufacturer.
+# AMG ERP Transformation: Executive Memo and Presentation
 
-### Company Profile (Anonymized)
-* **Personnel:** ~200 employees
-* **Revenue:** ~$100m annual revenue
-* **Footprint:** 5 operating locations (US & Canada)
-* **Business Model:** Engineer-to-order capital equipment; Aftermarket parts and service business
-* **Structure:** Multi-entity structure
+**Candidate:** Desmond Opoku Anane
+**Submission date:** July 17, 2026
+**Assignment:** Alpha Manufacturing Group (AMG) ERP Transformation Case Study
 
-> **Note:** Most customer orders are customized. Engineering complexity and Bill of Materials (BOM) accuracy are critical to operations and profitability.
+## What this repository contains
 
----
-
-## 2. Current-State Overview
-
-### 2.1 Application Landscape (As-Is)
-AMG operates a fragmented system landscape:
-
-* **Core ERP (20+ years old):** Finance, Manufacturing/MRP, Procurement. ~80 users.
-* **Engineering System:** Separate database for BOM and ECNs; nightly fragile sync.
-* **Other:** Cloud CRM (unintegrated), HRIS/Payroll (siloed), heavy Excel reliance.
-
-### 2.2 Observed Business Impact
-* **Margin Erosion:** ~80% of custom orders experienced margin erosion last year.
-* **Visibility:** No reliable contribution margin view; unreliable labor tracking.
-* **Operations:** Manufacturing delays due to BOM sync failures.
-
----
-
-## 3. Board Mandate
-The Board has approved a transformation program to:
-1. Replace the legacy ERP with a modern cloud ERP.
-2. Rationalize the application landscape and improve data governance.
-3. Ensure uninterrupted operations and improve margin transparency.
-
-**Target go-live:** ~12 months from now.
-
----
-
-## 4. Submission Process
+| File | Description |
+|---|---|
+| `AMG_Executive_Memo.pdf` | Executive memo to the AMG Executive Team, structure, scope, and data continuity recommendation |
+| `AMG_Executive_Deck.pptx` | Supporting slide deck for the live review presentation |
+| `AMG_Executive_Deck.pdf` | PDF version of the same deck, for quick viewing without PowerPoint |
+| `AMG_Executive_Deck.docx` | word document version of the same deck, for quick viewing |
 
 
+## The problem, in one paragraph
 
-To ensure your submission is reviewed, you **must** follow these steps:
+AMG's core ERP and its engineering BOM system are two separate databases held together by a nightly sync that regularly fails. Job costing and labor tracking sit outside both systems, so leadership cannot see contribution margin while a job is running, only after it closes. This is the direct cause of the margin erosion on custom orders and the manufacturing delays the Board has flagged. The Board has approved a twelve-month program to replace the legacy ERP with a modern cloud platform.
 
-1.  **Fork this Repository:** Click the "Fork" button at the top of this page to create a copy of these instructions in your own GitHub account.
-2.  **Upload Deliverables:** Upload your **Executive Memo (PDF)** and your **Presentation Slide Deck (PDF/PPTX)** directly to your forked repository.
-3.  **Ensure Public Access:** Your forked repository **must be set to Public**. All links and files must be accessible to the review team without requiring additional permissions.
-4.  **Submit the Form:** Once your repo is ready, submit the URL of your forked GitHub repository via the **[Online Submission Form Link Here](https://forms.office.com/e/MDkAbcEpGe)**.
+## What this submission answers
 
-> **Warning:** Submissions with private repositories or inaccessible files will not be evaluated.
+The assignment asked for a recommendation addressing three questions. Each is answered in full in the memo and mirrored in the deck.
 
----
+1. **Overall approach.** How to structure the program to maximize success and minimize operational risk, including objectives, phasing, top risks, and scope control.
+2. **Scope and sequencing.** What goes live on Day 1 versus what is deliberately deferred, migration exclusions, and customization discipline.
+3. **Data and reporting continuity.** How historical data, KPI reporting, and month-end close stay uninterrupted through the transition.
 
-## 5. Take-Home Assignment
-Prepare a 2–3 page executive memo and a supporting slide deck addressed to AMG’s Executive Team.
+## Summary of the recommendation
 
-### Prompt 1 – Overall Approach
-How would you structure the ERP replacement program to maximize success and minimize operational risk?
-* **Address:** Key objectives, Phasing approach, Top 3–5 risks, and scope control.
+- A **phased, pilot-first rollout** over four stages: Foundation (Months 1 to 3), Configure and Build (Months 4 to 7), a single-site Pilot Go-Live with a full parallel month-end close (Months 8 to 9), then a Wave Rollout to the remaining four locations (Months 10 to 12).
+- A **disciplined Day-1 scope** covering finance, manufacturing, engineering BOM and ECN management, and procurement, with CRM, HRIS, and BI platforms deliberately deferred to a later phase.
+- A **two-tier data model**: live, current data migrates directly into the new ERP, while closed historical records move into a read-only archive rather than the new transactional database, preserving audit and reporting access without carrying legacy data quality issues into day one.
+- A **change control board** from Month 1, so every scope addition is tested against the program's three objectives before it is approved.
 
-### Prompt 2 – Scope & Sequencing
-What should be included in the initial ERP go-live vs. deliberately deferred?
-* **Address:** Day-1 must-haves, migration exclusions, and customization discipline.
+The memo also grounds this approach in two well-documented real-world ERP cutover failures (Hershey, 1999, and Revlon, 2018) and includes a concrete technical path for the data continuity plan, mapped to a small set of managed cloud services (database migration with change data capture, object storage with a serverless query layer, and an event-driven interface layer).
 
-### Prompt 3 – Data & Reporting
-Leadership wants uninterrupted access to historical data and KPIs.
-* **Address:** Historical data migration, reporting during transition, and month-end close continuity.
+## How to review
 
----
-
-## 6. Deliverable Expectations & Live Review
-Following the submission of your GitHub repo link, successful candidates will be invited to a **Live Review Call**. You will present your slide deck to the "Executive Team" (Reviewers).
-
-**We are assessing:**
-* **Structure:** Clear, executive-level communication.
-* **Prioritization:** Ability to make difficult trade-offs.
-* **Judgment:** Practical, real-world application of ERP principles.
-* **Presentation:** Ability to defend your strategy under Q&A.
+- Start with `AMG_Executive_Memo.pdf` or `AMG_Executive_Memo.docx` for the full written recommendation.
+- Use `AMG_Executive_Deck.pptx` or `AMG_Executive_Deck.pdf` for the walkthrough structure used in the live review.
